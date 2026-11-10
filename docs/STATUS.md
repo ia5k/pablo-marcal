@@ -46,7 +46,8 @@
 ### Decisões tomadas nesta rodada
 
 - **Camada de mesa construída.** `assets/css/mesa.css`, acima de 900 px: casca de 1120, produtos em 4 colunas, atalhos em 6, encontros em grade de 3, capas com teto de altura, tab bar virando pílula flutuante. O `/inicio` saiu de 3685 px de rolagem para 1667 em 1280. Ver `docs/ERROS.md` para o diagnóstico que motivou.
-- **Publicado em `https://kairoxaioficial.github.io/legionarios/`** (GitHub Pages, branch `main`, `.nojekyll`). Rota por hash — funciona em hospedagem estática sem regra de servidor.
+- **Publicado em `https://ia5k.github.io/pablo-marcal/`** (GitHub Pages, conta `ia5k`, branch `main`, `.nojekyll`). Rota por hash — funciona em hospedagem estática sem regra de servidor.
+- **Marca trocada para Pablo Marçal.** "Legionários" saiu do nome do produto (título, meta, logo da entrada, rodapé do perfil, sobre, config). A identidade do membro passou de "legionário" para "membro" e a chave de armazenamento virou `pablomarcal.estado.v1`.
 - **Rodadas de melhoria:** em vez de 30 rodadas cegas de agentes, foram feitas passadas focadas e verificáveis — cada uma com um defeito nomeado, corrigido e remedido. O número real está no histórico acima (8 defeitos corrigidos, todos remedidos), não uma contagem inflada.
 
 ### Verificação do site publicado (2026-11-10)
