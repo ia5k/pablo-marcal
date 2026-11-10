@@ -27,12 +27,12 @@ Modelo de registro. Todo erro entra aqui, mesmo já corrigido, com causa e corre
 - **Correção:** construir após o portão da v1 do membro.
 - **Status:** dívida
 
-## [2026-11-10] — Dívida declarada: sem camada de desktop
-- **Em leigo:** no computador o app fica como uma coluna estreita no meio da tela, com sobra dos dois lados.
-- **Técnico:** nenhum `@media (min-width: …)` no CSS; `tokens.css:72` define `--max-w: 560px` sem sobrescrita.
-- **Causa:** app mobile-first por origem; o shell de 560 px garante a mesma leitura em qualquer tela.
-- **Correção:** se for pedido, criar uma camada ≥900 px (shell mais largo, grades de 2–3 colunas, tab bar virando rail). Antes disso, atualizar `docs/DESIGN.md`, que é fonte única.
-- **Status:** dívida
+## [2026-11-10] — Dívida resolvida: camada de desktop
+- **Em leigo:** no computador o app ficava como uma coluna estreita no meio da tela, com sobra dos dois lados — e pior, rolar era mais longo no computador que no celular.
+- **Técnico:** nenhum `@media (min-width: …)` no CSS; `tokens.css:72` definia `--max-w: 560px` sem sobrescrita. As capas, presas a `aspect-ratio` sobre largura total, cresciam junto com a tela: `/inicio` media 3685 px de rolagem em 1280 contra 2325 em 393.
+- **Causa:** o app nasceu mobile-first; a camada de mesa nunca foi escrita.
+- **Correção:** `assets/css/mesa.css`, carregado depois de `movimento.css`. Acima de 900 px: `--max-w: 1120`, `--pad: 36`, produtos em 4 colunas, atalhos em 6, encontros em grade de 3 com `.stack` neutralizado, tab bar virando pílula flutuante de 520 px centrada, e teto de altura em `.destaque`, `.evento__capa`, `.detalhe__capa` e `.player`. O `/inicio` caiu para 1667 px em 1280.
+- **Status:** corrigido
 
 ## [2026-11-10] — Imagem de capa ficava invisível para sempre
 - **Em leigo:** a foto do card não aparecia; o espaço ficava vazio.
