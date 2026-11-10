@@ -1,0 +1,90 @@
+/* ============================================================
+   MOVIMENTO — cada animação explica algo.
+   Nada decorativo no primeiro carregamento: a entrada revela
+   hierarquia (o principal primeiro), não enfeita.
+   ============================================================ */
+
+@keyframes girar { to { transform: rotate(360deg); } }
+
+@keyframes brilhar {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes entrar-balao {
+  from { opacity: 0; transform: translateY(8px) scale(.97); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes subir-suave {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes aparecer {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pulsar-ponto {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: .45; transform: scale(.82); }
+}
+
+/* ---------- entrada de tela ----------
+   A tela entra com opacidade e um deslocamento curto.
+   Dura 320 ms — abaixo do teto de 400 ms para ação frequente. */
+.tela--entrando { animation: aparecer var(--d-3) var(--e-out) both; }
+
+/* ---------- revelação em cascata ----------
+   Só o que está visível anima; o resto espera a rolagem.
+   O atraso cresce por importância, não aleatoriamente. */
+/* Só esconde o conteúdo quando o JS confirmou que consegue revelá-lo.
+   Sem JS, sem IntersectionObserver ou com movimento reduzido, tudo nasce visível. */
+html[data-revelar="on"] .revelar { opacity: 0; }
+.revelar[data-visivel="true"] {
+  animation: subir-suave var(--d-4) var(--e-reveal) both;
+  animation-delay: calc(var(--ordem, 0) * 60ms);
+}
+
+/* ---------- contagem regressiva: número trocando ---------- */
+.contagem__num[data-trocando="true"] { animation: pulsar-ponto var(--d-3) var(--e-out); }
+
+/* ---------- carregamento de imagem ---------- */
+html[data-revelar="on"] .midia img,
+html[data-revelar="on"] .produto__midia img,
+html[data-revelar="on"] .evento__capa img { opacity: 0; transition: opacity var(--d-3) var(--e-out), transform var(--d-4) var(--e-out); }
+/* precisa da mesma raiz das regras acima: sem isso a de esconder (0,2,2)
+   vence a de mostrar (0,2,1) e a imagem fica invisível para sempre */
+html[data-revelar="on"] .midia img[data-pronta],
+html[data-revelar="on"] .produto__midia img[data-pronta],
+html[data-revelar="on"] .evento__capa img[data-pronta] { opacity: 1; }
+
+/* ---------- tab bar: entrada única ---------- */
+.tabbar { animation: subir-suave var(--d-3) var(--e-spring) both; }
+
+/* ---------- aviso de reconexão ---------- */
+.offline { animation: subir-suave var(--d-2) var(--e-out) both; }
+
+/* ============================================================
+   ACESSIBILIDADE — quem pediu menos movimento recebe menos
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .revelar { opacity: 1; }
+  .midia img, .produto__midia img, .evento__capa img { opacity: 1; }
+}
+
+/* ============================================================
+   TRANSIÇÃO ENTRE TELAS — visão compartilhada
+   A capa do card não "salta": ela cresce até ocupar a tela.
+   ============================================================ */
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-old(raiz) { animation: aparecer var(--d-2) var(--e-out) reverse; }
+  ::view-transition-new(raiz) { animation: aparecer var(--d-3) var(--e-out); }
+}

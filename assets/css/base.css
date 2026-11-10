@@ -1,0 +1,114 @@
+/* ============================================================
+   BASE — reset, tipografia, foco, utilidades
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  font-family: var(--font);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--txt);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, p, figure, blockquote { margin: 0; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+img, svg, video { display: block; max-width: 100%; }
+button, input, select, textarea { font: inherit; color: inherit; }
+button { background: none; border: 0; padding: 0; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+a { color: inherit; text-decoration: none; }
+[hidden] { display: none !important; }
+
+.sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+
+/* ---------- ícones: traço, não silhueta ----------
+   O sprite é desenhado a traço (viewBox 24, path aberto). Preencher tudo
+   transformava cada ícone num borrão preto. Os poucos que nascem sólidos
+   declaram fill/stroke no próprio símbolo. */
+.i {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex: none;
+}
+
+/* ---------- foco desenhado, visível e bonito ---------- */
+:focus { outline: none; }
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: var(--r-sm);
+}
+.tab:focus-visible { outline-offset: -2px; }
+/* título recebe foco só por script (leitores de tela): não é alvo de teclado,
+   então o anel não informa nada — o foco visível segue em todo elemento acionável */
+.tela h1[tabindex="-1"]:focus { outline: none; }
+
+/* ---------- tipografia ---------- */
+.display { font-size: var(--fs-display); line-height: var(--lh-display); font-weight: 800; letter-spacing: -.022em; }
+.h1 { font-size: var(--fs-h1); line-height: var(--lh-h1); font-weight: 700; letter-spacing: -.018em; }
+.h2 { font-size: var(--fs-h2); line-height: var(--lh-h2); font-weight: 700; letter-spacing: -.014em; }
+.h3 { font-size: var(--fs-h3); line-height: var(--lh-h3); font-weight: 600; letter-spacing: -.008em; }
+.sm { font-size: var(--fs-sm); line-height: var(--lh-sm); }
+.xs { font-size: var(--fs-xs); line-height: var(--lh-xs); }
+.muted { color: var(--txt-3); }
+.soft { color: var(--txt-2); }
+.kicker {
+  font-size: var(--fs-xs);
+  line-height: var(--lh-xs);
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* ---------- layout ---------- */
+.app {
+  width: 100%;
+  max-width: var(--max-w);
+  margin-inline: auto;
+  min-height: 100dvh;
+}
+
+.tela {
+  padding-bottom: calc(var(--tabbar-h) + var(--safe-b) + var(--sp-8));
+  min-height: 100dvh;
+  scroll-behavior: smooth;
+}
+.tela--sem-nav { padding-bottom: calc(var(--safe-b) + var(--sp-8)); }
+
+.wrap { padding-inline: var(--pad); }
+.stack > * + * { margin-top: var(--sp-4); }
+.stack-lg > * + * { margin-top: var(--sp-6); }
+.sr { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+.pular {
+  position: fixed; top: -60px; left: var(--sp-4); z-index: 100;
+  background: var(--txt); color: var(--bg-elev); padding: var(--sp-2) var(--sp-4);
+  border-radius: var(--r-full); transition: top var(--d-2) var(--e-out);
+}
+.pular:focus-visible { top: var(--sp-4); }
+
+/* ---------- barra de rolagem discreta ---------- */
+.scroller {
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+}
+.scroller::-webkit-scrollbar { display: none; }
