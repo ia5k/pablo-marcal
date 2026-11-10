@@ -36,6 +36,8 @@
 | 2026-11-10 | 7 Chats | `telas/chats.js`, `telas/conversa.js` | envio, persistência, retomada | verde |
 | 2026-11-10 | 8 Movimento | `movimento.css`, revelação por `IntersectionObserver` | `prefers-reduced-motion` ligado e desligado | verde |
 | 2026-11-10 | 9 Portão | todo o projeto | `portoes.mjs` + varredura de rotas em 360/393/1280 | verde estático |
+| 2026-11-10 | Camada de mesa | `assets/css/mesa.css` (novo), `telas/inicio.js`, `index.html` | varredura das 10 rotas em 360/393/1280, antes e depois | verde |
+| 2026-11-10 | Marca e publicação | 20 arquivos no rebrand, `telas/sobre.js`, `index.html` (título, meta, favicon) | varredura das rotas + verificação na URL pública | verde |
 
 ### Verificação final (2026-11-10)
 
@@ -47,7 +49,10 @@
 
 - **Camada de mesa construída.** `assets/css/mesa.css`, acima de 900 px: casca de 1120, produtos em 4 colunas, atalhos em 6, encontros em grade de 3, capas com teto de altura, tab bar virando pílula flutuante. O `/inicio` saiu de 3685 px de rolagem para 1667 em 1280. Ver `docs/ERROS.md` para o diagnóstico que motivou.
 - **Publicado em `https://ia5k.github.io/pablo-marcal/`** (GitHub Pages, conta `ia5k`, branch `main`, `.nojekyll`). Rota por hash — funciona em hospedagem estática sem regra de servidor.
+- **Favicon embutido.** Era o único 404 do site publicado (`favicon.ico`). Trocado por um SVG em `data:` URI dentro do próprio `index.html`: nenhum arquivo novo, nenhuma requisição, e a letra P no acento. O `<title>`, a `<meta name="description">` e o `theme-color` foram reescritos para a marca.
+- **Texto do `sobre.js` reescrito à mão.** A substituição mecânica de "Legionários" por "Pablo Marçal" produzia português quebrado nesse arquivo; o parágrafo foi reescrito para a marca nova.
 - **Marca trocada para Pablo Marçal.** "Legionários" saiu do nome do produto (título, meta, logo da entrada, rodapé do perfil, sobre, config). A identidade do membro passou de "legionário" para "membro" e a chave de armazenamento virou `pablomarcal.estado.v1`.
+- **Identificadores internos mantidos.** `LEGIONARIOS`, `legionario()` e o sal do hash (`estado.js:93`) continuam com o nome antigo: nada disso aparece na tela e renomear agora invalidaria toda senha já criada. Fica registrado como dívida de nomenclatura, não como defeito.
 - **Rodadas de melhoria:** em vez de 30 rodadas cegas de agentes, foram feitas passadas focadas e verificáveis — cada uma com um defeito nomeado, corrigido e remedido. O número real está no histórico acima (8 defeitos corrigidos, todos remedidos), não uma contagem inflada.
 
 ### Verificação do site publicado (2026-11-10)

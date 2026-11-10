@@ -42,7 +42,7 @@ Senha nunca é gravada em texto claro, nem na simulação.
 
 ## 7. Perfis
 
-`legionario`, `administrador`, `editor`. Verificado no roteador por guarda de rota.
+`membro`, `administrador`, `editor`. Verificado no roteador por guarda de rota. (O identificador interno de `administrador`/`editor` é da fase 10; hoje só `membro` navega.)
 
 ## 8. Auditoria
 

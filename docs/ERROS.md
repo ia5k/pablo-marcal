@@ -74,3 +74,38 @@ Modelo de registro. Todo erro entra aqui, mesmo já corrigido, com causa e corre
 - **Causa:** dois Chrome headless rodando ao mesmo tempo e processos órfãos de execuções anteriores disputando a porta e o `user-data-dir`.
 - **Correção:** captura sempre sequencial, uma instância por vez, com `pkill -9 -f "user-data-dir=/tmp/pablo-"` e limpeza dos diretórios temporários antes de cada lote. Não afeta o app — é defeito de bancada.
 - **Status:** corrigido
+
+## [2026-11-10] — 404 de `favicon.ico` em produção
+- **Em leigo:** o navegador pedia um ícone que não existia; era o único erro na aba de rede do site publicado.
+- **Técnico:** `GET /favicon.ico` → 404 em toda carga.
+- **Causa:** a página nunca declarou ícone, e o navegador cai no pedido padrão pela raiz.
+- **Correção:** `<link rel="icon">` com SVG em `data:` URI dentro do `index.html`. Sem arquivo extra, sem requisição, sem 404.
+- **Status:** corrigido
+
+## [2026-11-10] — Arnês de auditoria travava na tela de entrada
+- **Em leigo:** todas as telas medidas apareciam iguais à tela de login.
+- **Técnico:** `alt 932/948` em todas as rotas, `aba null`, `barra 0x0` — a guarda de rota privada redirecionava para `#/entrada`.
+- **Causa:** o número semeado no arnês (`11999990000`) não existe em `dados.js`, então `perfilDe()` → `legionario()` devolvia `null` e a sessão não resolvia.
+- **Correção:** semear um número real da semente (`505058`). Regra de negócio correta — o defeito era da bancada.
+- **Status:** corrigido
+
+## [2026-11-10] — Recarga da semente não tinha efeito
+- **Em leigo:** mesmo com a sessão gravada, o app continuava na entrada.
+- **Técnico:** `Page.navigate` para a mesma URL é navegação no mesmo documento quando muda só o hash; `estado.js` mantinha a `memoria` do módulo já carregado.
+- **Causa:** o arnês navegava para `index.html#/inicio` logo depois de já estar em `index.html`.
+- **Correção:** navegar com query de cache-bust (`index.html?semente=<timestamp>#/inicio`), forçando recarga real do módulo. Aplicado em todos os arneses de `/tmp`.
+- **Status:** corrigido
+
+## [2026-11-10] — GitHub Pages respondia "Site not found" após habilitar
+- **Em leigo:** o link publicado dava página de erro logo depois de ligado.
+- **Técnico:** `404` do Pages com o `build_type` recém-criado.
+- **Causa:** a publicação estava em andamento; a primeira requisição chegou antes do build.
+- **Correção:** consultar `gh api repos/…/pages/builds/latest -q .status` até `built` e só então verificar. Levou 11 consultas.
+- **Status:** corrigido
+
+## [2026-11-10] — Varredura falhou após a troca de marca
+- **Em leigo:** depois de renomear, as telas medidas voltaram a ser a de entrada.
+- **Técnico:** os arneses semeavam `legionarios.estado.v1`, mas o app já lia `pablomarcal.estado.v1`.
+- **Causa:** a chave de armazenamento mudou junto com a marca e os scripts de bancada não acompanharam.
+- **Correção:** `sed` da chave antiga para a nova nos quatro arneses. Lembrete: trocar a chave invalida sessão existente de propósito.
+- **Status:** corrigido
