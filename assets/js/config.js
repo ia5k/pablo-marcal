@@ -1,5 +1,5 @@
 export const CONFIG = {
-  app: 'Legionários',
+  app: 'Pablo Marçal',
   whatsappDaLoja: '5511999990000',
   tentativasMax: 5,
   esperaBaseMs: 30_000,

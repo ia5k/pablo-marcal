@@ -1,4 +1,4 @@
-# DESIGN SYSTEM — App dos Legionários
+# DESIGN SYSTEM — App do Pablo Marçal
 
 > Base visual extraída de `https://legendarios-v2.147-93-67-121.nip.io/#/home` (inspeção dos tokens CSS e captura das telas em 393×852).
 > Substitui o vídeo `WhatsApp Video 2026-11-10 at 09.39.15.mp4` como referência visual.
@@ -67,7 +67,7 @@ Fonte: **Inter**, com fallback `-apple-system, BlinkMacSystemFont, 'SF Pro Displ
 
 | Escala | Tamanho / entrelinha | Peso | Uso |
 |---|---|---|---|
-| Display | 30 / 34 | 800 | Nome do legionário no topo |
+| Display | 30 / 34 | 800 | Nome do membro no topo |
 | H1 | 23 / 29 | 700 | Título de tela |
 | H2 | 19 / 24 | 700 | Título de seção |
 | H3 | 16 / 22 | 600 | Título de card |

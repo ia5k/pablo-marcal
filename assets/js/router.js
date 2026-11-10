@@ -63,7 +63,7 @@ function renderizar() {
     raiz.innerHTML = html;
     raiz.dataset.rota = rota.padrao;
     document.body.dataset.tela = rota.padrao;
-    document.title = rota.titulo ? `${rota.titulo} · Legionários` : 'Legionários';
+    document.title = rota.titulo ? `${rota.titulo} · Pablo Marçal` : 'Pablo Marçal';
 
     if (!rota.semRolagem || !primeira) window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
     primeira = false;

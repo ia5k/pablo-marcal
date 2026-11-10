@@ -21,14 +21,14 @@ export const semAba = true;
 export function render() {
   return `<section class="entrada">
     <div class="entrada__marca revelar">
-      <p class="entrada__logo">${icone('flag')}Legionários</p>
+      <p class="entrada__logo">${icone('flag')}Pablo Marçal</p>
       <h1 class="entrada__titulo">Entre para a<br>sua comunidade.</h1>
-      <p class="entrada__sub">Seu número de legionário e a data de nascimento. É só isso.</p>
+      <p class="entrada__sub">Seu número de membro e a data de nascimento. É só isso.</p>
     </div>
 
     <form class="entrada__form" id="form-entrada" novalidate>
       <label class="campo">
-        <span class="campo__rot">Número de legionário</span>
+        <span class="campo__rot">Número de membro</span>
         <input class="campo__ctrl" id="f-numero" name="numero" inputmode="numeric" autocomplete="username"
                maxlength="6" placeholder="000000" aria-describedby="d-numero">
         <span class="campo__dica" id="d-numero">Seis dígitos, como no seu cadastro.</span>
@@ -222,7 +222,7 @@ export function montar(raiz) {
     const corpo = `<div class="stack">
       <p class="soft">Informe o número. No modo demonstração mostramos o código na tela — num app com servidor ele chegaria por mensagem.</p>
       <label class="campo">
-        <span class="campo__rot">Número de legionário</span>
+        <span class="campo__rot">Número de membro</span>
         <input class="campo__ctrl" id="r-numero" inputmode="numeric" maxlength="6" placeholder="000000">
       </label>
       <p class="sm muted" id="r-codigo" hidden></p>

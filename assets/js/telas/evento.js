@@ -16,7 +16,7 @@ function icsDe(e) {
   const [h, m] = e.hora.split(':').map(Number);
   const fimH = String((h + 2) % 24).padStart(2, '0');
   const fim = e.data.replace(/-/g, '') + 'T' + fimH + String(m).padStart(2, '0') + '00';
-  return ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Legionarios//PT-BR', 'BEGIN:VEVENT',
+  return ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Pablo Marcal//PT-BR', 'BEGIN:VEVENT',
     `UID:${e.id}@legionarios`, `DTSTART:${inicio}`, `DTEND:${fim}`,
     `SUMMARY:${e.titulo}`, `LOCATION:${e.local}`, `DESCRIPTION:${e.descricao.replace(/\n/g, ' ')}`,
     'END:VEVENT', 'END:VCALENDAR'].join('\r\n');

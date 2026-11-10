@@ -25,7 +25,7 @@ export function render() {
   <header class="perfil__topo revelar">
     ${avatarDe(eu.nome, 'avatar--xl avatar--ring')}
     <h1 class="perfil__nome">${escapar(eu.nome)}</h1>
-    <p class="perfil__numero">LEGIONÁRIO #${escapar(eu.numero)}</p>
+    <p class="perfil__numero">MEMBRO #${escapar(eu.numero)}</p>
     <p class="xs muted">${escapar(eu.cidade)}, ${escapar(eu.uf)} · desde ${escapar(r.desde)}</p>
   </header>
 
@@ -80,7 +80,7 @@ export function render() {
   <section class="secao revelar">
     <div class="wrap stack">
       <button class="btn btn--danger btn--block" id="btn-sair">${icone('logout')}Sair da conta</button>
-      <p class="xs muted" style="text-align:center">Legionários · versão 1.0</p>
+      <p class="xs muted" style="text-align:center">Pablo Marçal · versão 1.0</p>
     </div>
   </section>`;
 }

@@ -48,7 +48,7 @@ export const PRODUTOS = [
   { id: 'p3', nome: 'Camiseta Laranja Operação', preco: 139.9, categoria: 'Camisetas', variacoes: ['M', 'G', 'GG'], tag: 'Exclusivo', destaque: 0, vendidos: 480 },
   { id: 'p4', nome: 'Boné Preto Aba Reta', preco: 89.9, categoria: 'Bonés', variacoes: ['Único'], tag: '', destaque: 3, vendidos: 190 },
   { id: 'p5', nome: 'Boné Trucker Laranja', preco: 99.9, categoria: 'Bonés', variacoes: ['Único'], tag: 'Novo', destaque: 5, vendidos: 140 },
-  { id: 'p6', nome: 'Pulseira Couro Legionário', preco: 49.9, categoria: 'Pulseiras', variacoes: ['Único'], tag: '', destaque: 6, vendidos: 610 },
+  { id: 'p6', nome: 'Pulseira Couro', preco: 49.9, categoria: 'Pulseiras', variacoes: ['Único'], tag: '', destaque: 6, vendidos: 610 },
   { id: 'p7', nome: 'Pulseira Silicone Marca', preco: 29.9, categoria: 'Pulseiras', variacoes: ['Único'], tag: '', destaque: 8, vendidos: 720 },
   { id: 'p8', nome: 'Bandana Mar Honra', preco: 59.9, categoria: 'Bandana', variacoes: ['Único'], tag: 'Exclusivo', destaque: 2, vendidos: 260 },
   { id: 'p9', nome: 'Bandana Preta Logo', preco: 54.9, categoria: 'Bandana', variacoes: ['Único'], tag: '', destaque: 7, vendidos: 175 },
@@ -59,18 +59,18 @@ export const PRODUTOS = [
 
 export const EVENTOS = [
   { id: 'e1', titulo: 'Baileiro, Camboriú', kicker: 'Evento do Consulado', data: '2026-12-05', hora: '20:00', local: 'Camboriú, SC', descricao: 'Três dias de imersão com a liderança, música e formação. Traga sua bandeira e seu número.', status: 'Disponível', destaque: true },
-  { id: 'e2', titulo: 'Encontro Nacional de Igrejas', kicker: 'Comunidade', data: '2026-11-22', hora: '09:00', local: 'São Paulo, SP', descricao: 'Um dia inteiro com pastores e líderes das igrejas parceiras. Vagas abertas para todos os legionários.', status: 'Disponível', destaque: false },
-  { id: 'e3', titulo: 'Imersão Legionários 2027', kicker: 'Formação', data: '2027-01-15', hora: '18:30', local: 'Balneário Camboriú, SC', descricao: 'A imersão anual. Quatro dias de formação intensiva, com hospedagem e alimentação incluídas.', status: 'Em breve', destaque: false },
+  { id: 'e2', titulo: 'Encontro Nacional de Igrejas', kicker: 'Comunidade', data: '2026-11-22', hora: '09:00', local: 'São Paulo, SP', descricao: 'Um dia inteiro com pastores e líderes das igrejas parceiras. Vagas abertas para todos os membros.', status: 'Disponível', destaque: false },
+  { id: 'e3', titulo: 'Imersão Pablo Marçal 2027', kicker: 'Formação', data: '2027-01-15', hora: '18:30', local: 'Balneário Camboriú, SC', descricao: 'A imersão anual. Quatro dias de formação intensiva, com hospedagem e alimentação incluídas.', status: 'Em breve', destaque: false },
   { id: 'e4', titulo: 'Culto de Ação de Graças', kicker: 'Igrejas', data: '2026-11-30', hora: '19:00', local: 'Itajaí, SC', descricao: 'Celebração aberta a toda a comunidade, com participação dos grupos de louvor das igrejas parceiras.', status: 'Disponível', destaque: false },
-  { id: 'e5', titulo: 'Encontro de Negócios', kicker: 'Networking', data: '2026-12-18', hora: '19:30', local: 'Curitiba, PR', descricao: 'Rodada de conexões entre legionários que empreendem. Traga seu pitch de dois minutos.', status: 'Encerrado', destaque: false }
+  { id: 'e5', titulo: 'Encontro de Negócios', kicker: 'Networking', data: '2026-12-18', hora: '19:30', local: 'Curitiba, PR', descricao: 'Rodada de conexões entre membros que empreendem. Traga seu pitch de dois minutos.', status: 'Encerrado', destaque: false }
 ];
 
 export const FAQ = [
   { id: 'f1', pergunta: 'Qual a importância do trabalho em equipe?', resposta: 'O trabalho em equipe é essencial para o sucesso de qualquer empreendimento. Além de potencializar as habilidades individuais, ele promove a colaboração, a comunicação e a sinergia entre os membros.' },
   { id: 'f2', pergunta: 'Qual a importância da inovação?', resposta: 'A inovação é fundamental para o crescimento e a sustentabilidade das organizações. Ela permite a criação de novos produtos, serviços e processos que atendam às necessidades em constante evolução do mercado.' },
-  { id: 'f3', pergunta: 'O que significa ser um Legionário?', resposta: 'Ser Legionário é pertencer a uma comunidade que se reconhece pelo número, pela conduta e pelo serviço. Não é um título — é um compromisso com as pessoas ao redor.' },
-  { id: 'f4', pergunta: 'Como funciona o número de legionário?', resposta: 'O número é único, vem do cadastro oficial da comunidade e acompanha você em tudo dentro do app. Ele identifica, não classifica: não existem níveis nem hierarquia.' },
-  { id: 'f5', pergunta: 'Por que a comunhão entre igrejas importa?', resposta: 'Porque nenhuma igreja é forte sozinha. O diretório existe para que um legionário encontre uma casa perto de onde está, em qualquer cidade do país.' },
+  { id: 'f3', pergunta: 'O que significa ser um Membro?', resposta: 'Ser Membro é pertencer a uma comunidade que se reconhece pelo número, pela conduta e pelo serviço. Não é um título — é um compromisso com as pessoas ao redor.' },
+  { id: 'f4', pergunta: 'Como funciona o número de membro?', resposta: 'O número é único, vem do cadastro oficial da comunidade e acompanha você em tudo dentro do app. Ele identifica, não classifica: não existem níveis nem hierarquia.' },
+  { id: 'f5', pergunta: 'Por que a comunhão entre igrejas importa?', resposta: 'Porque nenhuma igreja é forte sozinha. O diretório existe para que um membro encontre uma casa perto de onde está, em qualquer cidade do país.' },
   { id: 'f6', pergunta: 'Como participo dos encontros?', resposta: 'Todo encontro aparece na aba Início. Abra o evento e toque em "Vou participar" — sua presença fica registrada e você pode adicionar à sua agenda na hora.' },
   { id: 'f7', pergunta: 'Como entro em contato com a liderança?', resposta: 'Pela aba de conversas, procurando a equipe pelo nome, ou pelo canal oficial indicado no rodapé do app.' },
   { id: 'f8', pergunta: 'O app guarda meus dados?', resposta: 'Só o necessário para você usar a comunidade: identificação, contato e preferências. Nada é compartilhado com terceiros, e você pode falar com a equipe a qualquer momento.' }
@@ -100,4 +100,4 @@ export const ATALHOS = [
   { id: 'ranking', rotulo: 'Ranking', icone: 'sparkle', rota: '#/em-breve/ranking' }
 ];
 
-export const PROMESSAS = { networking: 'Um diretório de legionários por cidade e área, com conversa direta.', social: 'O mural oficial da liderança, com avisos e conteúdos.', ranking: 'O pódio de engajamento por país e por igreja.' };
+export const PROMESSAS = { networking: 'Um diretório de membros por cidade e área, com conversa direta.', social: 'O mural oficial da liderança, com avisos e conteúdos.', ranking: 'O pódio de engajamento por país e por igreja.' };

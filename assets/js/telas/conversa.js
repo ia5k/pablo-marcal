@@ -72,7 +72,7 @@ export function montar(raiz, { id }) {
     abrirSheet({
       titulo: 'Detalhes',
       corpo: `<div class="stack">
-        <p class="sm muted">${c.tipo === 'grupo' ? 'Grupo oficial por país e tempo de casa.' : 'Legionário cadastrado na comunidade.'}</p>
+        <p class="sm muted">${c.tipo === 'grupo' ? 'Grupo oficial por país e tempo de casa.' : 'Membro cadastrado na comunidade.'}</p>
         <div class="lista">
           <div class="lista__item"><span class="lista__corpo"><span class="lista__titulo">${escapar(c.nome)}</span><span class="lista__sub">#${escapar(c.contato)}</span></span></div>
           <div class="lista__item"><span class="lista__corpo"><span class="lista__titulo">${escapar(c.pais)}</span><span class="lista__sub">País</span></span></div>

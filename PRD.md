@@ -1,14 +1,14 @@
-# PRD — App dos Legionários
+# PRD — App do Pablo Marçal
 
 Versão 1. Documento funcional, sem tecnologia. Fonte: `docs/EXPLORACAO_IDEIA.md`.
 
 ## 1. Visão geral
 
-Aplicativo da comunidade de legionários do Pablo Marçal. Uma porta de entrada com identidade (o número de legionário), conteúdo curado pela liderança, diretório de igrejas, vitrine de produtos e um mensageiro interno. Cinco abas fixas: Sobre, Loja, Início, Igrejas e Perfil.
+Aplicativo da comunidade de membros do Pablo Marçal. Uma porta de entrada com identidade (o número de membro), conteúdo curado pela liderança, diretório de igrejas, vitrine de produtos e um mensageiro interno. Cinco abas fixas: Sobre, Loja, Início, Igrejas e Perfil.
 
 ## 2. Problema que resolve
 
-A comunidade está espalhada por grupos de WhatsApp e redes sociais, sem lugar único e oficial. Isso produz cinco dores: falta de identidade; comunicação oficial perdida em grupos informais; eventos sem canal próprio; nenhum diretório de igrejas com distância e horário; nenhum canal direto entre legionários de países diferentes.
+A comunidade está espalhada por grupos de WhatsApp e redes sociais, sem lugar único e oficial. Isso produz cinco dores: falta de identidade; comunicação oficial perdida em grupos informais; eventos sem canal próprio; nenhum diretório de igrejas com distância e horário; nenhum canal direto entre membros de países diferentes.
 
 ## 3. Objetivo
 
@@ -16,7 +16,7 @@ Ser a casa oficial da comunidade: identidade reconhecida, conteúdo da lideranç
 
 ## 4. Público e perfis
 
-- **Legionário** — entra com número e senha; consome conteúdo, favorita produtos, confirma presença, conversa.
+- **Membro** — entra com número e senha; consome conteúdo, favorita produtos, confirma presença, conversa.
 - **Administrador** — equipe interna; acesso total ao painel.
 - **Editor** — equipe interna; só conteúdo (igrejas, produtos, eventos, mensagem do Início, textos do Sobre).
 - **Igreja e vendedor** — são conteúdo cadastrado, sem acesso próprio na v1.
@@ -24,7 +24,7 @@ Ser a casa oficial da comunidade: identidade reconhecida, conteúdo da lideranç
 ## 5. Funcionalidades da v1
 
 ### Entrada
-1. Primeiro acesso com número de legionário + data de nascimento conferidos na base; o membro cria a própria senha.
+1. Primeiro acesso com número de membro + data de nascimento conferidos na base; o membro cria a própria senha.
 2. Número não encontrado encerra o fluxo com mensagem própria e caminho para a equipe.
 3. Limite de tentativas com espera crescente.
 4. Login seguinte com número + senha.
@@ -32,7 +32,7 @@ Ser a casa oficial da comunidade: identidade reconhecida, conteúdo da lideranç
 6. Aviso de privacidade com aceite registrado no primeiro acesso.
 
 ### Cabeçalho e navegação
-7. Avatar, saudação "Olá, Legionário [nome]" e número sempre visíveis.
+7. Avatar, saudação "Olá, Membro [nome]" e número sempre visíveis.
 8. Atalhos circulares: Sobre, Loja, Networking, Social, Igrejas, Ranking.
 9. Networking, Social e Ranking abrem tela "Em breve" com nome e uma frase do que virá.
 10. Ícone de mensagens abre Chats; ícone de moedas abre "Em breve".
@@ -61,7 +61,7 @@ Ser a casa oficial da comunidade: identidade reconhecida, conteúdo da lideranç
 25. Cards de produto com imagem, nome, preço e favoritar.
 26. Detalhe com variação e quantidade.
 27. "Comprar Aqui" monta a mensagem do pedido e sai do app para WhatsApp ou checkout externo. Sem carrinho, sem pagamento, sem frete, sem estoque.
-28. Favoritos ligados ao número do legionário.
+28. Favoritos ligados ao número do membro.
 
 ### Igrejas
 29. Busca por denominação e filtro.
@@ -71,7 +71,7 @@ Ser a casa oficial da comunidade: identidade reconhecida, conteúdo da lideranç
 
 ### Chats
 33. Lista de conversas com avatar ou bandeira, nome, prévia e chevron; busca.
-34. Botão "+" busca qualquer legionário por nome ou número e abre conversa privada.
+34. Botão "+" busca qualquer membro por nome ou número e abre conversa privada.
 35. Conversa com balões, envio de imagem, bloqueio e denúncia.
 36. Grupos por país/time onde todos escrevem; liderança fixa aviso e remove mensagem; administrador remove participante.
 37. Atualização ao abrir e ao puxar para baixo. Sem entrega instantânea.
@@ -117,18 +117,18 @@ Ser a casa oficial da comunidade: identidade reconhecida, conteúdo da lideranç
 12. O bloco Mensagens exibe um vídeo por vez, em player interno, sem som, tela cheia na horizontal.
 13. Evento tem status manual e confirmação simples.
 14. A lista de confirmados é visível aos membros; o próprio membro cancela.
-15. Qualquer legionário inicia conversa com qualquer outro; bloqueio e denúncia sempre disponíveis.
+15. Qualquer membro inicia conversa com qualquer outro; bloqueio e denúncia sempre disponíveis.
 16. Denúncia cai no painel da equipe.
 17. Nos grupos de país todos escrevem; liderança modera.
 18. A conversa atualiza ao abrir e ao puxar; sem promessa de instantaneidade.
 19. Networking, Social e Ranking ficam visíveis com tela "Em breve".
 20. Nenhuma tela fica em branco; sem conexão, o carregado continua legível e a escrita é bloqueada.
 21. O painel é área separada com dois papéis.
-22. "Legionário" designa a pessoa; "LEGENDÁRIOS" é marca gráfica da Loja.
+22. "Membro" designa a pessoa; "LEGENDÁRIOS" é marca gráfica da Loja.
 
 ## 8. Informações que o sistema controla
 
-Legionário (número, nome, nascimento, telefone, cidade/estado, área de atuação, foto, igreja, data de entrada, credencial, situação, país) · tentativas e código de recuperação · igreja (nome, logo, endereço, cidade/estado, país, horários, destaque e ordem) · produto (nome, imagens, preço, categoria, variações, descrição, destaque e ordem) · evento (título, imagem, data, horário, local, descrição, status, confirmados) · conteúdo do Início (link, título, arte) · textos do Sobre (pergunta, resposta, ordem) · conversas e grupos (participantes, mensagens, removidas, aviso fixado, bloqueios, denúncias) · favoritos · equipe (login e papel).
+Membro (número, nome, nascimento, telefone, cidade/estado, área de atuação, foto, igreja, data de entrada, credencial, situação, país) · tentativas e código de recuperação · igreja (nome, logo, endereço, cidade/estado, país, horários, destaque e ordem) · produto (nome, imagens, preço, categoria, variações, descrição, destaque e ordem) · evento (título, imagem, data, horário, local, descrição, status, confirmados) · conteúdo do Início (link, título, arte) · textos do Sobre (pergunta, resposta, ordem) · conversas e grupos (participantes, mensagens, removidas, aviso fixado, bloqueios, denúncias) · favoritos · equipe (login e papel).
 
 Não armazena na v1: estoque, pedido, pagamento, frete, saldo de moedas, pontuação de ranking.
 
@@ -139,7 +139,7 @@ Não armazena na v1: estoque, pedido, pagamento, frete, saldo de moedas, pontua�
 **Confirmar presença** → Início → evento → "Vou participar" → lista atualizada → "Adicionar à agenda".
 **Favoritar produto** → Loja → coração → Perfil mostra o favorito.
 **Comprar** → produto → variação e quantidade → "Comprar Aqui" → sai para WhatsApp com o pedido escrito.
-**Conversar** → Chats → "+" → busca legionário → conversa → envio de imagem.
+**Conversar** → Chats → "+" → busca membro → conversa → envio de imagem.
 
 ## 10. Critérios de aceitação
 

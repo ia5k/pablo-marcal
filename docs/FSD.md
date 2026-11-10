@@ -45,7 +45,7 @@ Cabeçalho, atalhos circulares, tab bar, tela "Em breve", toast, folha inferior 
 
 ## 11. Entidades — Fase 5
 
-Legionário, Igreja, Produto, Evento, Presença, Favorito, Conversa, Mensagem, Grupo, Denúncia, ItemSobre, Destaque.
+Membro, Igreja, Produto, Evento, Presença, Favorito, Conversa, Mensagem, Grupo, Denúncia, ItemSobre, Destaque.
 
 ## 12. CRUDs — Fase 6
 
@@ -89,7 +89,7 @@ Foto de perfil com `FileReader`, limite 1 MB, assinatura de bytes verificada, re
 
 ## 22. Relatórios e consultas
 
-Busca de produto por nome e categoria; busca de igreja por denominação; filtro por distância; busca de legionário por nome ou número; busca de conversa por nome.
+Busca de produto por nome e categoria; busca de igreja por denominação; filtro por distância; busca de membro por nome ou número; busca de conversa por nome.
 
 ## 23. APIs e integrações
 

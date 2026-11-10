@@ -8,7 +8,7 @@ Motivo: a âncora medida é um SPA estático de 8 KB com módulos nativos; a mai
 ## 2. Banco de dados
 
 **Nenhum servidor de banco na v1.** Os dados vivem em dois lugares:
-- `assets/js/dados/*.js` — semente imutável (legionários da base, igrejas, produtos, eventos, FAQ, textos legais).
+- `assets/js/dados/*.js` — semente imutável (membros da base, igrejas, produtos, eventos, FAQ, textos legais).
 - `localStorage` — o que o membro produz (sessão, favoritos, presenças, perfil editado, conversas locais).
 
 **Consequência declarada:** não há sincronização entre aparelhos nem entre pessoas. O chat da v1 é local: cada navegador tem suas próprias conversas. Isso é limitação de protótipo, não de produto — está registrado como dívida em `docs/ERROS.md`.

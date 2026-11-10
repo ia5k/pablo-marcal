@@ -1,8 +1,8 @@
-# CLAUDE.md — App dos Legionários
+# CLAUDE.md — App do Pablo Marçal
 
 ## O que é
 
-App web responsivo da comunidade de legionários. HTML, CSS e JavaScript puro, sem build, sem dependência externa além do player do YouTube. Estado do membro em `localStorage`.
+App web responsivo da comunidade de membros. HTML, CSS e JavaScript puro, sem build, sem dependência externa além do player do YouTube. Estado do membro em `localStorage`.
 
 ## Como rodar
 

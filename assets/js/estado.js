@@ -6,7 +6,7 @@
 import { LEGIONARIOS, CONVERSAS, EVENTOS } from './dados.js';
 import { CONFIG } from './config.js';
 
-const CHAVE = 'legionarios.estado.v1';
+const CHAVE = 'pablomarcal.estado.v1';
 
 const PADRAO = {
   sessao: null,                 // { numero, expiraEm }

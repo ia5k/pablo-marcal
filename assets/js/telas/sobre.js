@@ -27,7 +27,7 @@ export function render() {
     <div>
       <p class="kicker">Manifesto</p>
       <h2 class="detalhe__titulo" style="margin-top:var(--sp-1)">Ninguém caminha<br>sozinho.</h2>
-      <p class="detalhe__txt">Legionários é uma comunidade que se reconhece pelo número, pela conduta e pelo serviço. O app é a casa dela: os encontros, as igrejas, o comércio dos irmãos e a conversa de todos os dias.</p>
+      <p class="detalhe__txt">Esta é a casa digital do Pablo Marçal e da comunidade que caminha com ele. Um lugar que se reconhece pelo número, pela conduta e pelo serviço: os encontros, as igrejas, o comércio dos irmãos e a conversa de todos os dias.</p>
     </div>
   </section>
 

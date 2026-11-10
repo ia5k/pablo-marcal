@@ -66,7 +66,7 @@ function novaConversa() {
     corpo: `<div class="stack">
       <div class="busca">
         ${icone('search')}
-        <input type="search" id="busca-pessoa" placeholder="Nome ou número" aria-label="Buscar legionário">
+        <input type="search" id="busca-pessoa" placeholder="Nome ou número" aria-label="Buscar membro">
       </div>
       <div id="resultado-pessoas"></div>
     </div>`
@@ -78,7 +78,7 @@ function novaConversa() {
   const desenhar = () => {
     const pessoas = buscarPessoas(campo.value);
     if (!pessoas.length) {
-      alvo.innerHTML = `<p class="sm muted" style="padding:var(--sp-4) 0">Nenhum legionário encontrado. Confira o nome ou o número.</p>`;
+      alvo.innerHTML = `<p class="sm muted" style="padding:var(--sp-4) 0">Nenhum membro encontrado. Confira o nome ou o número.</p>`;
       return;
     }
     alvo.innerHTML = `<div class="lista">${pessoas.map((p) => `<button class="lista__item" data-pessoa="${escapar(p.numero)}">

@@ -33,7 +33,7 @@ export function render({ id }) {
     <p class="kicker">${escapar(p.categoria)}</p>
     <h1 class="detalhe__titulo" style="margin-top:var(--sp-1)">${escapar(p.nome)}</h1>
     <p class="h1" style="margin-top:var(--sp-2);color:var(--accent)">${escapar(dinheiro(p.preco))}</p>
-    <p class="sm muted" style="margin-top:var(--sp-1)">${p.vendidos} legionários já levaram este item</p>
+    <p class="sm muted" style="margin-top:var(--sp-1)">${p.vendidos} membros já levaram este item</p>
   </section>
 
   ${p.variacoes.length > 1 ? `
@@ -62,7 +62,7 @@ export function render({ id }) {
 
   <section class="secao revelar">
     <div class="wrap stack">
-      <p class="sm soft">Peça pelo WhatsApp da loja: o pedido sai com seu número de legionário e o tamanho escolhido, para a equipe separar a peça certa.</p>
+      <p class="sm soft">Peça pelo WhatsApp da loja: o pedido sai com seu número de membro e o tamanho escolhido, para a equipe separar a peça certa.</p>
       <a class="btn btn--primary btn--block" id="comprar" href="#" rel="noopener">${icone('bag')}Comprar pelo WhatsApp</a>
       <a class="btn btn--ghost btn--block" href="#/loja">Continuar vendo</a>
     </div>
@@ -96,7 +96,7 @@ export function montar(raiz, { id }) {
 
   $('#comprar', raiz).addEventListener('click', () => {
     const eu = sessao()?.numero ?? '';
-    const texto = `Olá! Quero comprar: ${p.nome}${p.variacoes.length > 1 ? ` — tamanho ${variacao}` : ''} — ${qtd} un.${eu ? ` Meu número de legionário é ${eu}.` : ''}`;
+    const texto = `Olá! Quero comprar: ${p.nome}${p.variacoes.length > 1 ? ` — tamanho ${variacao}` : ''} — ${qtd} un.${eu ? ` Meu número de membro é ${eu}.` : ''}`;
     const url = `https://wa.me/${CONFIG.whatsappDaLoja}?text=${encodeURIComponent(texto)}`;
     window.open(url, '_blank', 'noopener');
   });

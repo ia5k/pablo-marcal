@@ -147,7 +147,7 @@ function iniciar() {
 
   /* sessão expirada em outra aba */
   window.addEventListener('storage', (e) => {
-    if (e.key === 'legionarios.estado.v1' && !sessao() && caminhoAtual() !== '/entrada') {
+    if (e.key === 'pablomarcal.estado.v1' && !sessao() && caminhoAtual() !== '/entrada') {
       const atual = caminhoAtual();
       if (!['/entrada'].includes(atual)) location.hash = '#/entrada';
     }

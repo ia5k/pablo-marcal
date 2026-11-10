@@ -75,7 +75,7 @@ function abrirIgreja(id) {
         <span>${icone('clock')}${escapar(ig.horarios)}</span>
       </div>
       <p class="soft">${escapar(ig.endereco)}</p>
-      <p class="sm muted">Cultos abertos a todos os legionários. Chegando, apresente seu número — alguém da casa vai te receber.</p>
+      <p class="sm muted">Cultos abertos a todos os membros. Chegando, apresente seu número — alguém da casa vai te receber.</p>
     </div>`,
     pe: `<a class="btn btn--primary btn--block" href="https://www.google.com/maps/search/?api=1&query=${busca}" target="_blank" rel="noopener">${icone('pin')}Traçar rota</a>`
   });
