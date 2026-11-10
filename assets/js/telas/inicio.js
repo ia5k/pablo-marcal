@@ -81,7 +81,7 @@ export function render() {
 
   <section class="secao revelar" aria-label="Encontros">
     ${linhaTitulo('Encontros')}
-    <div class="wrap stack">
+    <div class="wrap stack grade-eventos">
       ${eventos.slice(0, 3).map((e) => cartaoEvento(e, { vai: vaiParticipar(e.id) })).join('')}
     </div>
   </section>

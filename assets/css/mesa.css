@@ -1,0 +1,78 @@
+/* ============================================================
+   MESA — a partir de 900 px o app deixa de ser uma coluna
+   estreita no meio do vazio e vira uma superfície de leitura.
+
+   Nada de HTML muda aqui: só a casca, as grades e a barra.
+   Tudo parte dos mesmos tokens — nenhum valor solto novo.
+   ============================================================ */
+
+@media (min-width: 900px) {
+  :root {
+    --max-w: 1120px;
+    --pad: 36px;
+    --tabbar-h: 68px;
+  }
+
+  /* ---------- a tela ganha folga ----------
+     Com a barra virando pílula, o rodapé precisa de mais
+     respiro para o último item não ficar atrás dela. */
+  .tela { padding-bottom: calc(var(--tabbar-h) + var(--safe-b) + var(--sp-10)); }
+  .tela--sem-nav { padding-bottom: var(--sp-12); }
+
+  /* ---------- barra de abas: faixa vira pílula ----------
+     Uma barra de 5 itens esticada em 1120 px fica oca. Presa
+     ao centro com largura própria, ela lê como um dock e
+     mantém a mesma distância de toque de antes. */
+  .tabbar {
+    left: 50%; right: auto; translate: -50% 0;
+    max-width: 520px;
+    bottom: var(--sp-4);
+    border: 1px solid var(--line);
+    border-radius: var(--r-full);
+    box-shadow: var(--sh-2);
+    overflow: hidden;
+  }
+
+  /* o indicador da aba ativa nasce colado no topo: na pílula
+     ele encosta na curva, então desce um pouco */
+  .tab[aria-current="page"]::before { top: 9px; }
+
+  /* o FAB sobe acima da pílula, alinhado à direita da casca */
+  .fab { bottom: calc(var(--tabbar-h) + var(--safe-b) + var(--sp-8)); }
+
+  /* ---------- grades ganham colunas ----------
+     Mesmo conteúdo, menos rolagem: o que era 2 colunas em
+     punho vira 4 em mesa, e os atalhos usam a largura toda. */
+  .grade-produtos { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--sp-4); }
+  .atalhos { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: var(--sp-3); }
+
+  /* ---------- destaque: proporção de cinema ----------
+     16/11 em 1120 px daria 770 px de altura — mais alto que
+     a dobra. 21/9 mantém o enquadramento largo e cabe na tela. */
+  .destaque { aspect-ratio: 21 / 9; padding: var(--sp-6); }
+
+  /* ---------- encontros em grade ----------
+     Três cards empilhados com capa de 16/10 davam 2439 px de
+     rolagem numa tela de 900. Em duas colunas viram 900. */
+  .grade-eventos {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--sp-4);
+    align-items: start;
+  }
+  /* o empilhamento vertical do .stack brigaria com a grade */
+  .grade-eventos > * + * { margin-top: 0; }
+
+  /* ---------- capas não crescem sem limite ----------
+     A capa é recorte de imagem, não conteúdo: acima de ~420 px
+     ela come o resto da dobra sem mostrar nada de novo. */
+  .evento__capa { max-height: 220px; }
+  .detalhe__capa { max-height: 420px; }
+  .player { max-height: 520px; }
+
+  /* ---------- texto corrido não estica demais ----------
+     Em 1120 px uma linha de texto passa de 130 caracteres e o
+     olho perde o começo da linha seguinte. 74ch é a medida
+     confortável de leitura. */
+  .acordeao__texto { max-width: 74ch; }
+}
